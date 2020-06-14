@@ -19,7 +19,7 @@ function CreateTaskForm(props) {
             }
             {props.isOpenCreateTaskForm &&
             <form>
-                <div className="form-group">
+                <div className="form-group">https://github.com/indiraaridni/kanban/blob/master/src/components/CreateTaskForm.js
                     <label>Enter task name:</label>
                     <input type="text"
                            className="form-control"
@@ -32,7 +32,7 @@ function CreateTaskForm(props) {
                     <div className="input-group-prepend">
                         <label className="input-group-text" htmlFor="inputGroupSelect01">Statuses:</label>
                     </div>
-                    <select onChange={(e) => setStatus(e.target.value)} defaultValue="done" className="custom-select" id="inputGroupSelect01">
+                    <select onChange={(e) => setStatus(e.target.value)} defaultValue="todo" className="custom-select" id="inputGroupSelect01">
 
                         {
                             props.statuses.sort((a, b) => b - a)
