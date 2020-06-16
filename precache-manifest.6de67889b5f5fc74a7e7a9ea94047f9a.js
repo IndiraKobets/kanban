@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "21550aaa68b40895a4bc61888530f7f6",
+    "revision": "08abf80b9e73b87d428cfe1a4140f0bc",
     "url": "/kanban/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kanban/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "843e485b63d31a8df82d",
+    "revision": "170975338b7070df5f29",
     "url": "/kanban/static/css/main.5ecd60fb.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/kanban/static/js/2.50e41f0f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "843e485b63d31a8df82d",
-    "url": "/kanban/static/js/main.79015c38.chunk.js"
+    "revision": "170975338b7070df5f29",
+    "url": "/kanban/static/js/main.51e116d3.chunk.js"
   },
   {
     "revision": "0e4ca57cb4a868185634",
