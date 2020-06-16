@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import CreateTaskForm from './components/CreateTaskForm';
 import Body from './components/Body';
 import { v4 as uuidv4 } from 'uuid';
-import TaskCard from "./components/TaskCard";
+
 
 
 const initialTasks = [
@@ -43,8 +43,8 @@ function App() {
 
     const taskSubmit = (e) => {
         e.preventDefault();
-        console.log(taskInput);
-        setTasks([...tasks, {id: uuidv4(), name: taskInput, status: 'todo', priority: 1}]);
+        console.log(e);
+        setTasks([...tasks, {id: uuidv4(), name: taskInput, status: 'todo', priority: 2}]);
         setTaskInput('');
         setIsOpenCreateTaskForm(false);
         setIsActiveButtonTaskCreate(false);
@@ -123,6 +123,7 @@ function App() {
                      taskSubmit={taskSubmit}
                      taskCancel={taskCancel}
                      statuses={statuses}
+                     priorities={priorities}
 
 
      />

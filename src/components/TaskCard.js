@@ -94,14 +94,10 @@ function TaskCard(props) {
     <div>
       <div className="card m-2">
         <div className="card-body">
-
+        <span>
 
             {
                 priority < 3 && <div onClick={handleUp}>{minus}</div>
-            }
-
-            {
-                priority > 1 && <div onClick={handleDown}>{plus}</div>
             }
 
             {
@@ -124,6 +120,10 @@ function TaskCard(props) {
                 </span>
             }
 
+            {
+                priority > 1 && <div onClick={handleDown}>{plus}</div>
+            }
+            </span>
 
                 <div key={props.task.id} className="task-card">
                     {  taskEdit.id !== props.task.id &&
@@ -152,9 +152,6 @@ function TaskCard(props) {
                     }
                 </div>
 
-
-
-
             {
                 props.task.status !== 'todo' && <span className= 'mr-2' onClick={handleLeft}>{left}</span>
             }
@@ -162,23 +159,22 @@ function TaskCard(props) {
                 props.task.status !== 'done' && <span onClick={handleRight}>{right}</span>
             }
 
-
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Delete Task</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Are you sure you want to delete task?</Modal.Body>
                 <Modal.Footer>
-                    <Button className="secondary" onClick={handleClose}>
+                    <Button type="button"
+                            className="btn btn-secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button className="primary" onClick={handleDelete}>
+                    <Button type="button"
+                            className="btn btn-info" onClick={handleDelete}>
                         Delete
                     </Button>
                 </Modal.Footer>
             </Modal>
-
-
 
         </div>
       </div>

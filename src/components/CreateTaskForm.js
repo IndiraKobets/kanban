@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 
 
 function CreateTaskForm(props) {
-    const [status, setStatus] = useState('');
+    // const [status, setStatus] = useState('');
+    const [priority, setPriority] = useState(props.priorities[props.priorities.length - 1].id);
 
   return (
     <div>
@@ -19,7 +20,7 @@ function CreateTaskForm(props) {
             }
             {props.isOpenCreateTaskForm &&
             <form>
-                <div className="form-group">https://github.com/indiraaridni/kanban/blob/master/src/components/CreateTaskForm.js
+                <div className="form-group">
                     <label>Enter task name:</label>
                     <input type="text"
                            className="form-control"
@@ -28,22 +29,21 @@ function CreateTaskForm(props) {
 
                 </div>
 
-                <div className="input-group mb-3">
+                <div className="input-group input-group-sm mb-2 mt-2">
                     <div className="input-group-prepend">
-                        <label className="input-group-text" htmlFor="inputGroupSelect01">Statuses:</label>
+                        <label className="input-group-text" htmlFor="inputGroupSelect01">Priority:</label>
                     </div>
-                    <select onChange={(e) => setStatus(e.target.value)} defaultValue="todo" className="custom-select" id="inputGroupSelect01">
-
+                    <select className="custom-select"
+                            id="inputGroupSelect01"
+                            defaultValue={priority}
+                            onChange={(e) => setPriority(e.target.value)}>
                         {
-                            props.statuses.sort((a, b) => b - a)
-                                .map(el =>
-                                    <option key={el} value={el}>{el}</option>
-                                )
+                            props.priorities.map(el => {
+                                return <option key={el.id} value={el.id}>{el.priority}</option>
+                            })
                         }
-
                     </select>
                 </div>
-
 
 
                 <button type="submit" className="btn btn-info"
