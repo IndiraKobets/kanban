@@ -29,7 +29,7 @@ function App() {
     const [isOpenCreateTaskForm, setIsOpenCreateTaskForm] = useState(false);
     const [isActiveButtonTaskCreate, setIsActiveButtonTaskCreate] = useState(false);
     const [taskInput, setTaskInput] = useState('');
-
+    const [priority, setPriority] = useState(priorities[priorities.length - 1].id);
 
 
     const openCreateTaskForm = () => {
@@ -44,7 +44,7 @@ function App() {
     const taskSubmit = (e) => {
         e.preventDefault();
         console.log(e);
-        setTasks([...tasks, {id: uuidv4(), name: taskInput, status: 'todo', priority: 2}]);
+        setTasks([...tasks, {id: uuidv4(), name: taskInput, status: 'todo', priority: priority}]);
         setTaskInput('');
         setIsOpenCreateTaskForm(false);
         setIsActiveButtonTaskCreate(false);
@@ -124,6 +124,8 @@ function App() {
                      taskCancel={taskCancel}
                      statuses={statuses}
                      priorities={priorities}
+                     priority={priority}
+                     setPriority={setPriority}
 
 
      />

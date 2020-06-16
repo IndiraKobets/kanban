@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 
 function CreateTaskForm(props) {
     // const [status, setStatus] = useState('');
-    const [priority, setPriority] = useState(props.priorities[props.priorities.length - 1].id);
+
 
   return (
     <div>
@@ -35,8 +35,8 @@ function CreateTaskForm(props) {
                     </div>
                     <select className="custom-select"
                             id="inputGroupSelect01"
-                            defaultValue={priority}
-                            onChange={(e) => setPriority(e.target.value)}>
+                            defaultValue={props.priority}
+                            onChange={(e) => props.setPriority(Number(e.target.value))}>
                         {
                             props.priorities.map(el => {
                                 return <option key={el.id} value={el.id}>{el.priority}</option>
