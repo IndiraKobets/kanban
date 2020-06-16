@@ -97,7 +97,7 @@ function TaskCard(props) {
         <span>
 
             {
-                priority < 3 && <div onClick={handleUp}>{minus}</div>
+                priority > 1 && <div onClick={handleDown}>{plus}</div>
             }
 
             {
@@ -121,7 +121,7 @@ function TaskCard(props) {
             }
 
             {
-                priority > 1 && <div onClick={handleDown}>{plus}</div>
+                priority < 3 && <div onClick={handleUp}>{minus}</div>
             }
             </span>
 
